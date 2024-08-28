@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  postgres:
+    build: .
+    container_name: postgresSSL
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+      - ./var/log:/var/log/pg_log/
+
+networks:
+  default:
+    name: axonius
+    external: true
+
+

@@ -1,5 +1,7 @@
 FROM postgres:13-alpine
 
+RUN apk add openssl
+
 COPY ./out/server.crt /var/lib/postgresql
 COPY ./out/server.key /var/lib/postgresql
 

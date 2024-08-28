@@ -12,6 +12,8 @@ services:
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
       - ./var/log:/var/log/pg_log/
+    networks:
+      - default
 
 networks:
   default:
